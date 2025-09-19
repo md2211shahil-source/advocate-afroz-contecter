@@ -1,0 +1,365 @@
+<html lang="en" >
+<meta charset="UTF-8">
+    <title>advocate afroz web.ai</title>
+    <head>
+        
+    
+        <link rel="stylesheet" href="html.css">
+        <h1>the desiner of the world is desire</h1>
+<video src="https://www.youtube.com/watch?v=HcOc7P5BMi4">my data</video>
+       
+  <style>
+    body {
+      
+    header {
+      background-color: #2f3e46;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #354f52;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #cad2c5;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      color:#333 ;
+    }
+    footer {
+      background-color: green;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+
+<body>
+
+  <header>
+    <h1>Advocate Afroz</h1>
+    <p>Justice. Integrity. Dedication.</p>
+  </header>
+
+  <nav>
+    <a href="C:\Users\lenovo\Desktop\home page.html">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+
+
+  </nav>
+
+  <div class="hero">
+    <h1>Welcome to Advocate Afroz's Legal Portal</h1>
+    <p>Providing expert legal advice and representation with compassion and professionalism.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 Advocate Afroz. All rights reserved.
+  </footer>
+
+</body>
+<a href="https://www.youtube.com/watch?v=HcOc7P5BMi4"><button>CSS</button></a>
+    <a href="https://www.makautexam.net/"><button>makout</button></a>
+    <a href="https://web.telegram.org/k/"><button> tellygram</button>
+<a href="https://courses.linkinglaws.com/my-timetable"><button>linking law</button></a>
+
+<a href="https://drive.google.com/drive/home"><button>google drive adv</button></a>
+
+  
+  
+<body>
+ 
+
+  <div id="mainContent" style="display:none;">
+    <!-- Yahan aapka original afroz.html ka content aayega -->
+    <h2>📋 Advocate Afroz Contact Manager</h2>
+    <!-- Add your contact form and data here -->
+  </div>
+
+
+
+
+
+ 
+
+  <div class="search-section">
+  <input id="search" type="text" placeholder="🔍 Search by Name">
+  <button onclick="searchRow()">Search</button>
+</div>
+<div id="result" class="search-result"></div>
+
+
+  <h1>📋 Advocate Afroz Contact Manager</h1>
+
+  <div class="form-section">
+    <input id="name" type="text" placeholder="Enter Name">
+    <input id="phone" type="text" placeholder="Enter Phone">
+    <input id="address" type="text" placeholder="Enter Address">
+    <button onclick="addRow()">➕ Add</button>
+  
+  </div>
+
+ 
+
+
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be added here -->
+    </tbody>
+  </table>
+
+  <script>
+    window.onload = function() {
+      const saved = localStorage.getItem("afrozTable");
+      if (saved) {
+        const rows = JSON.parse(saved);
+        const tbody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+        rows.forEach(data => {
+          const row = tbody.insertRow();
+          data.forEach(text => {
+            const cell = row.insertCell();
+            cell.textContent = text;
+            cell.contentEditable = true;
+          });
+        });
+      }
+    };
+
+    function addRow() {
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+
+      if (!name || !phone || !address) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      const tbody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+      const row = tbody.insertRow();
+      [name, phone, address].forEach(text => {
+        const cell = row.insertCell();
+        cell.textContent = text;
+        cell.contentEditable = true;
+      });
+
+      document.getElementById("name").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("address").value = "";
+
+      saveTable();
+    }
+
+    function saveTable() {
+      const tbody = document.getElementById("dataTable").getElementsByTagName("tbody")[0];
+      const data = [];
+      for (let row of tbody.rows) {
+        const rowData = [];
+        for (let cell of row.cells) {
+          rowData.push(cell.textContent);
+        }
+        data.push(rowData);
+      }
+      localStorage.setItem("afrozTable", JSON.stringify(data));
+    }
+
+    function searchRow() {
+      const query = document.getElementById("search").value.toLowerCase();
+      const rows = document.querySelectorAll("#dataTable tbody tr");
+      let found = false;
+
+      rows.forEach(row => {
+        const name = row.cells[0].textContent.toLowerCase();
+        if (name.includes(query)) {
+          const phone = row.cells[1].textContent;
+          const address = row.cells[2].textContent;
+          document.getElementById("result").textContent =
+            `📞 ${row.cells[0].textContent}: ${phone}, ${address}`;
+          found = true;
+        }
+      });
+
+      if (!found) {
+        document.getElementById("result").textContent = "❌ No match found.";
+      }
+    }
+  </script>
+
+</body>
+
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #fce4ec);
+    }
+    header {
+      background-color: #00695c;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    #about {
+      background: linear-gradient(to left, #fff3e0, #e1f5fe);
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .contact-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 30px;
+    }
+    .contact-box input,
+    .contact-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    .contact-box button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .contact-box button:hover {
+      background-color: #004d40;
+    }
+  </style>
+
+<body>
+
+  <header>
+    <h1>Advocate Afroz</h1>
+    <p>Justice. Integrity. Dedication.</p>
+  </header>
+
+  <section id="about">
+    <h2>📋 Advocate Afroz Contact Manager</h2>
+    <div class="contact-box">
+      <label>Enter Name:</label><br>
+      <input type="text"><br><br>
+
+      <label>Enter Phone:</label><br>
+      <input type="text"><br><br>
+
+      <label>Enter Address:</label><br>
+      <textarea rows="3"></textarea><br><br>
+
+      <button>➕ Add</button>
+      <button>💾 Save</button>
+    </div>
+  </section>
+<head>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, textarea { margin: 5px 0; width: 300px; }
+    table { margin-top: 20px; border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  </style>
+</head>
+
+<body>
+  <h2>📋 Advocate Afroz Contact Manager</h2>
+  <label>Enter Name:</label><br>
+  <input type="text" id="name"><br>
+  <label>Enter Phone:</label><br>
+  <input type="text" id="phone"><br>
+  <label>Enter Address:</label><br>
+  <textarea id="address" rows="3"></textarea><br>
+  <button onclick="addContact()">➕ Add</button>
+
+  <table id="contactTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    function addContact() {
+      const name = document.getElementById("name").value.trim().toUpperCase();
+      const phone = document.getElementById("phone").value.trim();
+      const address = document.getElementById("address").value.trim();
+
+      if (!name || !phone || !address) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      if (!/^[0-9]{10}$/.test(phone)) {
+        alert("Phone number must be 10 digits.");
+        return;
+      }
+
+      const table = document.getElementById("contactTable").getElementsByTagName("tbody")[0];
+      const newRow = table.insertRow();
+      newRow.insertCell(0).innerText = name;
+      newRow.insertCell(1).innerText = phone;
+      newRow.insertCell(2).innerText = address;
+
+      // Clear fields
+      document.getElementById("name").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("address").value = "";
+    }
+  </script>
+
+
+
+</body
+ 
+
+
+
+
+
+
+
+    </head>
+</html>
+
